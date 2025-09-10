@@ -105,7 +105,6 @@ h6 {
     overflow: hidden;
     max-width: 1440px;
     margin: 0 auto;
-    /* padding: 0 20px; */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -212,9 +211,6 @@ h6 {
     padding: 6rem 0rem;
 }
 
-.logo {
-    width: 9%;
-}
 
 .button {
     display: flex;
@@ -275,6 +271,111 @@ h6 {
 .social {
     display: flex;
     gap: 1rem;
+}
+
+@media (max-width: 768px) {
+
+    /* الكونتينر */
+    .container {
+        padding: 0 1.5rem;
+        gap: 4rem;
+    }
+
+    /* الهيدر */
+    .header {
+        margin-top: 7rem;
+        text-align: center;
+    }
+
+    .header-bg {
+        transform: translate(0);
+        height: 30%;
+    }
+
+    .heading {
+        font-size: 1.7rem;
+    }
+
+    div h2,
+    h3 {
+        text-align: center;
+    }
+
+    .paragraph {
+        font-size: 1.1rem;
+    }
+
+    .button {
+        flex-direction: column;
+        width: 100%;
+        gap: 1.5rem;
+    }
+
+    .button button {
+        width: 100%;
+    }
+
+    /* الفيتشرز */
+    .features {
+        grid-template-columns: 1fr;
+        gap: 5rem;
+        text-align: center;
+    }
+
+    .features-img {
+        width: 100%;
+        transform: none;
+        margin: 0 auto;
+    }
+
+    .features-text {
+        align-items: center;
+        text-align: center;
+    }
+
+    .text {
+        margin-top: 2rem;
+    }
+
+    /* الايقونات */
+    .icons {
+        grid-template-columns: 1fr;
+        gap: 4rem;
+        text-align: center;
+    }
+
+    /* اللوجوهات */
+    .logos {
+        flex-direction: column;
+        gap: 4rem;
+    }
+
+    .logo {
+        width: 33%;
+    }
+
+    /* الفوتر */
+    .footer {
+        width: 100%;
+        grid-template-columns: 1fr;
+        gap: 3rem;
+        padding: 3rem 1.5rem;
+        text-align: center;
+    }
+
+    .links {
+        align-items: center;
+    }
+
+    .social {
+        justify-content: center;
+        gap: 2.5rem;
+    }
+
+    .footer {
+        width: 768px;
+        gap: 2rem;
+    }
 }
 
 /* .attribution {
