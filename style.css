@@ -1,29 +1,35 @@
+/* ============================= */
+/* 1. Root Variables             */
+/* ============================= */
 :root {
     --mobile: 375px;
     --desktop: 1440px;
+
     --Green-500: hsl(171, 66%, 44%);
     --Blue-100: hsl(233, 100%, 69%);
     --Gray-700: hsl(210, 10%, 33%);
     --Gray-500: hsl(201, 11%, 66%);
+
     --Font-size: 18px;
     --Font-size-s: 16px;
+
     --Weights-400: 400;
     --Weights-600: 600;
 }
 
-/* 1. Use a more-intuitive box-sizing model */
+/* ============================= */
+/* 2. Reset & Base Styles        */
+/* ============================= */
 *,
 *::before,
 *::after {
     box-sizing: border-box;
 }
 
-/* 2. Remove default margin */
 * {
     margin: 0;
 }
 
-/* 3. Enable keyword animations */
 @media (prefers-reduced-motion: no-preference) {
     html {
         interpolate-size: allow-keywords;
@@ -34,12 +40,9 @@ body {
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
     width: 100%;
-    /* خلي الجسم كله بعرض الشاشة */
     min-height: 100vh;
-    /* يضمن أن الخلفية تتمدد لطول الشاشة */
 }
 
-/* 6. Improve media defaults */
 img,
 picture,
 video,
@@ -49,7 +52,6 @@ svg {
     max-width: 100%;
 }
 
-/* 7. Inherit fonts for form controls */
 input,
 button,
 textarea,
@@ -57,7 +59,6 @@ select {
     font: inherit;
 }
 
-/* 8. Avoid text overflows */
 p,
 h1,
 h2,
@@ -68,7 +69,6 @@ h6 {
     overflow-wrap: break-word;
 }
 
-/* 9. Improve line wrapping */
 p {
     text-wrap: pretty;
 }
@@ -82,25 +82,14 @@ h6 {
     text-wrap: balance;
 }
 
-/*
-    10. Create a root stacking context
-  */
 #root,
 #__next {
     isolation: isolate;
 }
 
-.header-bg {
-    position: absolute;
-    /* width: 100%; */
-    z-index: -1;
-}
-
-.header {
-    margin-top: 8rem;
-}
-
-/* Global */
+/* ============================= */
+/* 3. Global / Layout            */
+/* ============================= */
 .container {
     overflow: hidden;
     max-width: 1440px;
@@ -110,7 +99,7 @@ h6 {
     align-items: center;
     gap: 5rem;
     font-size: var(--Font-size);
-    font-family: 'Bai Jamjuree', sans-serif;
+    font-family: "Bai Jamjuree", sans-serif;
 }
 
 .logo {
@@ -123,9 +112,30 @@ h6 {
     align-items: center;
 }
 
+/* ============================= */
+/* 4. Header                     */
+/* ============================= */
+.header-bg {
+    position: absolute;
+    z-index: -1;
+}
+
+.header {
+    margin-top: 8rem;
+}
+
+/* ============================= */
+/* 5. Typography & Text          */
+/* ============================= */
 .heading {
     color: var(--Gray-700);
     font-weight: var(--Weights-600);
+}
+
+.paragraph {
+    text-align: center;
+    font-size: var(--Font-size-s);
+    color: var(--Gray-500);
 }
 
 .paragraph-s {
@@ -138,23 +148,16 @@ h6 {
     flex-direction: column;
     align-items: center;
     gap: 1rem;
-
-    &:nth-of-type(2) {
-        padding: 2rem 0;
-    }
-
-    &:nth-last-child(2) {
-        padding: 2rem 0;
-    }
 }
 
-.paragraph {
-    text-align: center;
-    font-size: var(--Font-size-s);
-    color: var(--Gray-500);
+.text:nth-of-type(2),
+.text:nth-last-child(2) {
+    padding: 2rem 0;
 }
 
-/* Features */
+/* ============================= */
+/* 6. Features Section           */
+/* ============================= */
 .features {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -179,7 +182,9 @@ h6 {
     gap: 0.5rem;
 }
 
-/* Icons */
+/* ============================= */
+/* 7. Icons Section              */
+/* ============================= */
 .icons {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -202,44 +207,48 @@ h6 {
     font-weight: var(--Weights-600);
 }
 
-/* logos */
+/* ============================= */
+/* 8. Logos Section              */
+/* ============================= */
 .logos {
     display: flex;
     justify-content: center;
-    gap: 11rem;
     align-items: center;
-    padding: 6rem 0rem;
+    gap: 11rem;
+    padding: 6rem 0;
 }
 
-
+/* ============================= */
+/* 9. Buttons                    */
+/* ============================= */
 .button {
     display: flex;
-    font-weight: var(--Weights-600);
     gap: 1rem;
+    font-weight: var(--Weights-600);
     box-shadow: 10px 10px 10px 10px rgba(4, 172, 170, 0.01);
 }
 
 .btn-1 {
     background-color: var(--Green-500);
-    color: white;
+    color: #fff;
     padding: 0.6rem 2rem;
     border-radius: 50px;
     border: none;
     box-shadow: 0px 4px 0px -1px rgb(35 150 130);
-
 }
 
 .btn-2 {
     background-color: var(--Blue-100);
-    color: white;
+    color: #fff;
     padding: 0.6rem 2rem;
     border-radius: 50px;
     border: none;
     box-shadow: 0px 4px 0px -1px rgb(70 85 190);
-
 }
 
-/* footer */
+/* ============================= */
+/* 10. Footer                    */
+/* ============================= */
 .footer {
     width: 1440px;
     display: grid;
@@ -273,15 +282,16 @@ h6 {
     gap: 1rem;
 }
 
+/* ============================= */
+/* 11. Media Queries (Mobile)    */
+/* ============================= */
 @media (max-width: 768px) {
-
-    /* الكونتينر */
     .container {
         padding: 0 1.5rem;
         gap: 4rem;
     }
 
-    /* الهيدر */
+    /* Header */
     .header {
         margin-top: 7rem;
         text-align: center;
@@ -305,6 +315,7 @@ h6 {
         font-size: 1.1rem;
     }
 
+    /* Buttons */
     .button {
         flex-direction: column;
         width: 100%;
@@ -315,7 +326,7 @@ h6 {
         width: 100%;
     }
 
-    /* الفيتشرز */
+    /* Features */
     .features {
         grid-template-columns: 1fr;
         gap: 5rem;
@@ -337,14 +348,14 @@ h6 {
         margin-top: 2rem;
     }
 
-    /* الايقونات */
+    /* Icons */
     .icons {
         grid-template-columns: 1fr;
         gap: 4rem;
         text-align: center;
     }
 
-    /* اللوجوهات */
+    /* Logos */
     .logos {
         flex-direction: column;
         gap: 4rem;
@@ -354,7 +365,7 @@ h6 {
         width: 33%;
     }
 
-    /* الفوتر */
+    /* Footer */
     .footer {
         width: 100%;
         grid-template-columns: 1fr;
@@ -377,12 +388,3 @@ h6 {
         gap: 2rem;
     }
 }
-
-/* .attribution {
-    font-size: 11px;
-    text-align: center;
-}
-
-.attribution a {
-    color: hsl(228, 45%, 44%);
-} */
